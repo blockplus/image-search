@@ -9,8 +9,6 @@ function($scope, browseService,$uibModal, editItemService, AuthenticationService
         $scope.maxSize = 5;
     }
 
-
-
       $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
       };

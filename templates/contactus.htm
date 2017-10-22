@@ -39,11 +39,7 @@
   </div>
   
   <div class ="starter-template col-md-4">
-    <img ng-src="static/images/ad1.png" style="width: 100%;">
-    <div class="row" style="padding: 10px 0 10px 0; font-weight: bold;">
-      <span style="font-size: large; color: #777;">www.motuin.org</span>
-    </div>
-    <img ng-src="static/images/ad2.png" style="width: 100%;">
+    <img ng-src="{{item.url}}" style="width: 100%; margin-bottom: 15px;" ng-repeat="item in ads_images">
   </div>
 </div>
 

@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="col-md-12" style="text-align: right;">
+            <div class="col-md-12" style="text-align: right;" ng-show="count">
               <ul uib-pagination total-items="count" ng-model="currentPage" max-size="maxSize" class="pagination-sm" ng-change="pageChanged()" boundary-links="true" force-ellipses="true"></ul>
             </div>
 

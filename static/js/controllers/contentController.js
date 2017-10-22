@@ -13,7 +13,7 @@ function($scope, AuthenticationService, ContentService){
     };
 
     $scope.save_content = function(key, content) {
-        ContentService.SaveContent($scope, key, content, $scope.afterSave);
+        ContentService.SaveContent($scope, key, content);
     }
     $scope.afterSaveAbout = function(result) {
         console.log(result);

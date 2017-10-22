@@ -12,11 +12,11 @@ function ($rootScope, Auth, $state, GlobalService) {
                     $state.go('login');
                 }
         }
-
+        /*
         if (toState.name === 'register') {
             event.preventDefault();
             $state.go('login');
-        }
+        }//*/
 
     }); 
     $rootScope.bank_count = 0;
@@ -78,8 +78,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('register', {
         url: '/register',
         templateUrl : "templates/register.htm",
-        controller  : 'RegisterController',
-        controllerAs: 'vm'
+        controller  : 'RegisterController'
     })
     .state('about', {
         url: '/about',
@@ -362,7 +361,7 @@ app.service('AuthenticationService', ['$http', '$window', 'Auth', function ($htt
 
             if (result['error'] == "ok") {
                 Auth.setUser(result['user']);
-                $window.location.href = '/#/admin';
+                $window.location.href = '/#/browse';
             }
             else if (result['error'] == "invalid username") {
                 $window.alert("Invalid username");
@@ -481,7 +480,6 @@ function ($http, $window) {
         })
         .error(function(){
             $scope.loading = false;
-            //$window.alert("Failed to save content!");
         });
     }
 
@@ -498,7 +496,7 @@ function ($http, $window) {
         })
         .success(function(result){
             $scope.loading = false;
-            callback(result);
+            $window.alert("Successfully saved content!");
         })
         .error(function(){
             $scope.loading = false;

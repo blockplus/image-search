@@ -4,5 +4,3 @@ server.py
 bank.db
 *.pyc
 static/bank/*
-static/search/*
-static/advertise/*
