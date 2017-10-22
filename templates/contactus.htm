@@ -1,0 +1,52 @@
+<loading></loading>
+
+<div class="header general">
+      <div class="col-sm-12 logo">
+        <img src="static/images/logo.png" style="height: 100%;">
+        <span class="title-font-small">motuin</span> 
+      </div>
+</div>
+
+
+<div class="container" role="main" style="min-height: calc(100vh - 95px);">
+  <div class ="starter-template col-md-8">
+
+      <div class="form-area">  
+        <form role="form">
+          <br style="clear:both">
+                  <h3 style="margin-bottom: 25px; text-align: center;">Contact Us</h3>
+                  <span class="text-info">{{content}}</span> 
+              <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+                      <div class="form-group">
+                      <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                          <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                      </div>
+              
+          <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+          </form>
+      </div>
+  </div>
+  
+  <div class ="starter-template col-md-4">
+    <img ng-src="static/images/ad1.png" style="width: 100%;">
+    <div class="row" style="padding: 10px 0 10px 0; font-weight: bold;">
+      <span style="font-size: large; color: #777;">www.motuin.org</span>
+    </div>
+    <img ng-src="static/images/ad2.png" style="width: 100%;">
+  </div>
+</div>
+
+<div class="footer-search">
+    © MOTUIN All Rights Reserved | <a ui-sref="policy" target='_blank'>Website Policy</a> | <a ui-sref="about" target='_blank'>About</a> | <a>Contact Us</a> | <a ui-sref="browse" target='_blank'>Admin</a>
+</div>

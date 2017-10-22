@@ -1,0 +1,38 @@
+<loading></loading>
+
+<div class="welcome-content">
+
+    <div class="logo-div">
+        <img src="static/images/logo.png">
+        <span class="title-font">motuin</span>    
+    </div>
+
+  <div class="search-box">
+    <div>
+        <span style="font-size: xx-large; color: white;">Original Image Search For Science</span>
+
+        <div style="padding-top: 10px;">
+            <div class="col-sm-6 col-sm-offset-3">
+                <label class="btn btn-primary" style="float: left;">
+                    Upload <input type="file" style="display: none !important;" custom-on-change="searchFile" required>
+                </label> 
+
+                <div class="input-group stylish-input-group">
+
+                   <input type="text" class="form-control" ng-model="url" placeholder="Upload or enter Image URL" >
+                    <span class="input-group-addon">
+                        <button ng-click="searchUrl()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+    © MOTUIN All Rights Reserved | <a ui-sref="policy" target='_blank'>Website Policy</a> | <a ui-sref="about" target='_blank'>About</a> | <a ui-sref="contactus" target='_blank'>Contact Us</a> | <a  ui-sref="browse" target='_blank'>Admin</a>
+</div>
