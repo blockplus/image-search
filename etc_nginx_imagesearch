@@ -1,9 +1,0 @@
-server {
-    listen 80;
-    server_name 192.168.77.196;
-
-    location / {
-        include uwsgi_params;
-        uwsgi_pass unix:/home/admin2/work/back/imagesearch.sock;
-    }
-}

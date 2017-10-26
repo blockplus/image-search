@@ -1,6 +1,0 @@
-batch_images/*
-tmp/*
-server.py
-bank.db
-*.pyc
-static/bank/*
