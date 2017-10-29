@@ -25,3 +25,16 @@ CodeIgniter simple login register with Bootstrap
 **Support:**
 
 if you have questions contact me via : halim.webdev@gmail.com
+
+//////////////////////////////////////////////////
+
+Configure The "php.ini" File
+    file_uploads = On
+    allow_url_for_open = On
+-------------
+write permission
+    sudo chown root:root bank/
+    sudo chown root:root bank/thumb/
+    sudo find images/ -type d -exec chmod 770 {} +
+    sudo find images/ -type f -exec chmod 660 {} +
+-------------

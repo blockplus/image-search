@@ -90,3 +90,10 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
  */ 
 define('GENERAL_SALT', 'general salt'); 
 define('AUTH_SALT', 'auth salt'); 
+
+define('ADVERTISE_PATH', 'assets/advertise/'); 
+define('ADVERTISE_THUMB_PATH', 'assets/advertise/thumb/'); 
+define('SEARCH_PATH', 'assets/search/'); 
+define('SEARCH_THUMB_PATH', 'assets/search/thumb/'); 
+define('BANK_PATH', 'assets/bank/'); 
+define('BANK_THUMB_PATH', 'assets/bank/thumb/'); 

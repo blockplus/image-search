@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
             </button>
-            <a href="<?php echo site_url('welcome');?>" class="navbar-brand">Image Search</a>
+            <a href="<?php echo site_url('welcome');?>" class="navbar-brand"  target='_blank'>Image Search</a>
         </div>
         
         <div class="collapse navbar-collapse">

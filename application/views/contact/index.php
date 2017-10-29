@@ -37,6 +37,8 @@
   </div>
   
   <div class ="starter-template col-md-4">
-    <img ng-src="{{item.url}}" style="width: 100%; margin-bottom: 15px;" ng-repeat="item in ads_images">
+    <?php foreach ($advertise_items as $item) { ?>
+      <img src="<?php echo site_url(ADVERTISE_PATH.$item['imagename']);?>" style="width: 100%; margin-bottom: 15px;">
+    <?php } ?>
   </div>
 </div>
