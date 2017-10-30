@@ -25,6 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://192.168.77.196/page/';
 $config['base_directory'] = '/var/www/html/page/';
+$config['base_engine_url'] = 'http://localhost:8000/';
+$config['base_es_url'] = 'http://localhost:9200/';
 
 /*
 |--------------------------------------------------------------------------

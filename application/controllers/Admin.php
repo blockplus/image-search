@@ -299,21 +299,50 @@ class Admin extends CI_Controller {
 
         if (count($_POST)) {
             $items = array();
-            $items['about'] = $_POST['about'];
-            $items['policy'] = $_POST['policy'];
-            $items['contact'] = $_POST['contact'];
-            $data['notif'] = $this->content_model->set_contents();
-        } else {
-            $rows = $this->content_model->get_contents();
-            $items = array();
-            foreach ($rows as $row) {
-                $type = $row->{'tc_type'};
-                $content = $row->{'tc_content'};
-                
-                $items[$type] = $content;
+
+            $items['about'] = array(
+                'tc_id' => $_POST['about_id'],
+                'tc_content' => $_POST['about_content'],
+                'tc_type' => 'about'
+            );
+            $items['policy'] = array(
+                'tc_id' => $_POST['policy_id'],
+                'tc_content' => $_POST['policy_content'],
+                'tc_type' => 'policy'
+            );
+            $items['contact'] = array(
+                'tc_id' => $_POST['contact_id'],
+                'tc_content' => $_POST['contact_content'],
+                'tc_type' => 'contact'
+            );
+
+            foreach ($items as $key => $item) {
+                if ($item['tc_id'] == '') {
+                    $this->content_model->insert($item);    
+                } else {
+                    $this->content_model->update($item);
+                }
             }
+
+            $notif = array();
+            $notif['message'] = 'Saved successfully';
+            $notif['type'] = 'success';
+            $data['notif'] = $notif;
+
         }
-        
+
+        $rows = $this->content_model->get_rows();
+        $items = array();
+        foreach ($rows as $row) {
+            $type = $row->{'tc_type'};
+            $content = $row->{'tc_content'};
+            $id = $row->{'tc_id'};
+            $items[$type] = array(
+                'id' => $id,
+                'content' => $content
+            );
+        }
+    
         /*
          * Load view
          */
@@ -447,6 +476,35 @@ class Admin extends CI_Controller {
         $this->load->view('admin/includes/footer');
     }
 
+    public function engine() {
+        $data['title'] = 'Admin - Engine';
+        $data['active'] = 'engine';
+        $data['session_user'] = $this->session_user;
+
+        $base_es_url = $this->config->item('base_es_url');
+        if (count($_POST) > 0) {
+            if (@$_POST['delete']) {
+                // $url = $base_es_url . "_all";
+                // $res = $this->curl_del($url);
+                // print_r($res);die();
+
+                die('delete');
+            }
+            else if (@$_POST['start']) {
+                die('start');
+            }
+            else if (@$_POST['restart']) {
+                die('restart');
+            }
+
+        }
+
+        $this->load->view('admin/includes/header', $data);
+        $this->load->view('admin/includes/navbar');
+        $this->load->view('admin/engine');
+        $this->load->view('admin/includes/footer');
+    }
+
     public function imageResize($source_image, $new_image, $image_size){
         //$img_path =  realpath("img")."\\images\\uploaded\\".$imgName.".jpeg";
 
@@ -471,4 +529,19 @@ class Admin extends CI_Controller {
         return true;
     }
 
+    public function curl_del($path, $json = '')
+    {
+        // $url = $this->__url.$path;
+        $url = $path;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+        curl_close($ch);
+
+        return $result;
+    }
 }

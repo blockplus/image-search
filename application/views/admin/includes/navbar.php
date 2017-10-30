@@ -15,6 +15,7 @@
                 <li <?php if (isset($active) && $active=='upload') echo "class='active'";?>><a href="<?php echo site_url('admin/upload');?>">Upload</a></li>           
                 <li <?php if (isset($active) && $active=='content') echo "class='active'";?>><a href="<?php echo site_url('admin/content');?>">Content</a></li>           
                 <li <?php if (isset($active) && $active=='advertise') echo "class='active'";?>><a href="<?php echo site_url('admin/advertise');?>">Advertise</a></li>           
+                <li <?php if (isset($active) && $active=='engine') echo "class='active'";?>><a href="<?php echo site_url('admin/engine');?>">Manage Engine</a></li>           
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
